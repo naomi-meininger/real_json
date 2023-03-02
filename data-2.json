@@ -1,0 +1,185 @@
+
+{
+
+
+"songs" : [
+        
+{
+        "name": "Crazy in Love",
+        "artists": [
+                "Beyoncé"
+        ],
+        "genres": [
+                "R&B",
+                "Soul"
+        ],
+        "year": "2003"
+},
+
+{
+        "name": "Easy on Me",
+        "artists": [
+                "Adele"
+        ],
+        "genres": [
+                "Pop"
+        ],
+        "year": "2021"
+},
+
+{
+        "name": "Made Your Look",
+        "artists": [
+                "Megan Trainor"
+        ],
+        "genres": [
+                "Pop"
+        ],
+        "year": "2022"
+},
+
+{
+        "name": "Bohemian Rhaspody",
+        "artists": [
+                "Queen"
+        ],
+        "genres": [
+                "Rock"
+        ],
+        "year": "1975"
+},
+
+{
+        "name": "No One is Alone",
+        "artists": [
+                "Stephen Sondheim"
+        ],
+        "genres": [
+                "Broadway"
+        ],
+        "year": "1991"
+},
+
+{
+        "name": "Love Story",
+        "artists": [
+                "Taylor Swift"
+        ],
+        "genres": [
+                "Country"
+        ],
+        "year": "2008"
+},
+
+{
+        "name": "Truth Hurts",
+        "artists": [
+                "Lizzo"
+        ],
+        "genres": [
+                "Alternative",
+                "Indie"
+        ],
+        "year": "2019"
+},
+{
+        "name": "Good Days",
+        "artists": [
+                "SZA"
+        ],
+        "genres": [
+                "R&B",
+                "Soul"
+        ],
+        "year": "2020"
+},
+
+{
+        "name": "Leave The Door Open",
+        "artists": [
+                "Silk Sonic"
+        ],
+        "genres": [
+                "R&B",
+                "Soul"
+        ],
+        "year": "2021"
+},
+
+{
+        "name": "Drivers License",
+        "artists": [
+                "Olivia Rodrigo"
+        ],
+        "genres": [
+                "Pop"
+        ],
+        "year": "2021"
+},
+
+{
+        "name": "Good 4 U",
+        "artists": [
+                "Olivia Rodrigo"
+        ],
+        "genres": [
+                "Pop",
+                "Rock"
+        ],
+        "year": "2021"
+},
+
+{
+        "name": "Montero (Call Me By Your Name)",
+        "artists": [
+                "Lil Nas X"
+        ],
+        "genres": [
+                "Pop",
+                "Hip-Hop"
+        ],
+        "year": "2021"
+},
+
+{
+        "name": "Deja Vu",
+        "artists": [
+                "Olivia Rodrigo"
+        ],
+        "genres": [
+                "Pop",
+                "Rock"
+        ],
+        "year": "2021"
+},
+
+{
+        "name": "Heat Waves",
+        "artists": [
+                "Glass Animals"
+        ],
+        "genres": [
+                "Alternative",
+                "Indie"
+        ],
+        "year": "2020"
+},
+
+{
+        "name": "Kiss Me More",
+        "artists": [
+                "Doja Cat",
+                "SZA"
+        ],
+        "genres": [
+                "Pop",
+                "R&B"
+        ],
+        "year": "2021"
+}
+
+
+
+]
+
+}
