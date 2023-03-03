@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+<title>Song List</title>
+
+<meta charset="utf-8"/>
+        
+        <script>
+               function loadMessages() {
+			/* Step 1: Make instance of XHR object...
+			...to make HTTP request after page is loaded*/
+			request = new XMLHttpRequest();
+			console.log("1: created request");
+ 
+		// Step 2: Open the JSON file at remote location
+ 
+			request.open("GET", "https://naomi-meininger.github.io/json_homework/data-1.json", true);
+
+			console.log("2: open success");
+ 	
+			// Step 3: set up callback for when HTTP response is returned (i.e., you get the JSON file back)
+
+			request.onreadystatechange = function() {
+				console.log("3:  event fired");
+			
+ 
+				if (request.readyState == 4 && request.status == 200) {
+
+					// Step 5: when we get all the JSON data back, parse it and use it
+					console.log("5:  data is ready");
+					theData = request.responseText;
+					returnHTML = theData;
+					obj = JSON.parse(theData);
+                                        console.log(obj);
+					
+
+                                        fil = document.getElementById("filt");
+                                        arr = obj["songs"];
+                                        // console.log("Here " + obj[0]);
+                                        // document.getElementById("info").innerHTML =returnHTML;
+                                        document.getElementById("info").innerHTML = "";
+                                        for (let k = 0; k < arr.length; k++) {
+                                                document.getElementById("info").innerHTML += "<br>";
+                                                document.getElementById("info").innerHTML += "<br>";
+
+                                                // Adel isn't printing???
+                                                document.getElementById("info").innerHTML += arr[k]["name"];
+                                                document.getElementById("info").innerHTML += "<br>";
+
+                                                art = arr[k]["artists"];
+                                                for (let l = 0; l < art.length; l++) {
+                                                         document.getElementById("info").innerHTML += art[l];
+                                                         if (l != art.length - 1) {
+                                                                document.getElementById("info").innerHTML += ", ";
+                                                         }
+                                                        
+                                                }
+                                                document.getElementById("info").innerHTML += "<br>";
+
+                                                gen = arr[k]["genres"];
+                                                for (let l = 0; l < gen.length; l++) {
+                                                         document.getElementById("info").innerHTML += gen[l];
+                                                         if (l != gen.length - 1) {
+                                                                document.getElementById("info").innerHTML += ", ";
+                                                         }
+                                                       
+                                                }
+                                                document.getElementById("info").innerHTML += "<br>";
+
+                                                document.getElementById("info").innerHTML += arr[k]["year"];
+                                                
+
+                                        }
+
+
+                                        fil.addEventListener("click", function () {
+                                                // console.log(typeof obj[0]);
+                                        selectElement = document.getElementById("menu");
+                                       
+
+                                        correct = correspondingGenre(selectElement.selectedIndex);
+                                        console.log("Genre: " + correct);
+                                        console.log("Length " + arr.length);
+                                        document.getElementById("results").innerHTML = "";
+                                        for (let i = 0; i < arr.length; i++) {
+
+                                                gen = arr[i]["genres"];
+                                                console.log(gen);
+                                                for (let j = 0; j < gen.length; j++) {
+                                                        console.log(gen[j]);
+                                                        if (gen[j] == correct) {
+                                                                document.getElementById("results").innerHTML += arr[i]["name"];
+                                                                document.getElementById("results").innerHTML += "<br>";
+                                                                break;
+                                                        }
+                                                }
+                                        }
+
+
+                                        })
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+					document.getElementById("info").innerHTML = "Whoops, something went terribly wrong!";
+
+				}
+
+				else if (request.readyState == 3) {
+
+					console.log("6:  ready state 3- request received,data being sent");
+					document.getElementById("info").innerHTML = "Come back soon!";
+
+				}
+
+			} //end on readystate change
+	
+		// Step 4: fire off the HTTP request
+			request.send();
+			console.log("4 request sent");
+		}
+                
+               
+        </script>
+
+</head>
+
+<body onload = "loadMessages()">
+        <style>
+                h1 {
+                        text-align: center;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+                body {
+                        background-color: lightblue;
+                }
+                input#results {
+                        text-align: center;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+
+
+        </style>
+        <h1>Songs!</h1>
+        <form>
+                
+                <div id = "info">
+
+                </div>
+                <select id = "menu">
+                        <option>R&amp;B</option>
+                        <option>Pop</option>
+                        <option>Rock</option>
+                        <option>Broadway</option>
+                        <option>Country</option>
+                        <option>Alternative</option>
+                        <option>Indie</option>
+                        <option>Hip-Hop</option>
+                        <option>Soul</option>
+                </select>
+                <input id = "filt" type = "button" value = "Filter"> </input>
+                <p id = "results"> </p>
+
+
+        </form>
+        <script>
+        
+
+        function correspondingGenre (i) {
+
+        if (i == 0) {
+        return "R&B";
+        }
+        if (i == 1) {
+        return "Pop";
+        }
+        if (i == 2) {
+        return "Rock";
+        }
+        if (i == 3) {
+        return "Broadway";
+        }
+        if (i == 4) {
+        return "Country";
+        }
+        if (i == 5) {
+        return "Alternative";
+        }
+        if (i == 6) {
+        return "Indie";
+        }
+        if (i == 7) {
+        return "Hip-Hop";
+        }
+        else {
+        return "Soul";
+        }
+
+
+        }
+        </script>
+       
+</body>
+
+
+
+</html>
+
+
